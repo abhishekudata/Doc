@@ -1,0 +1,4 @@
+docker build -t apache .
+
+docker run --name apache1 -p 8080:80 apache
+

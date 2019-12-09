@@ -1,0 +1,9 @@
+to intall virtualbox in ubutnu--> sudo apt-get install virtualbox 
+
+to download fedora image--> go to fedora.org link-->from "Workstation" download 64 bit live image. from the rigth corner.
+
+then open virtual box and and create new then keep all the option as default they have mentioned...->>
+
+then fedora image will be get created in virtualbox.
+
+now click on that image and go to setting-->storage-->empty var click-->and give path of your iso image.

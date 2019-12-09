@@ -1,0 +1,11 @@
+running dockerfile 
+
+
+
+
+go to that dockerfile open terminal and run
+
+
+sudo su
+docker build -t python-barcod 
+

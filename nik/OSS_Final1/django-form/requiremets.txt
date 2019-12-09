@@ -1,0 +1,3 @@
+mysql-client
+postgresql-client
+sqlite3

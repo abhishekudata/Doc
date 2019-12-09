@@ -1,0 +1,16 @@
+kernal compilation
+
+tutorials available at(for ubuntu)-->https://www.linux.com/learn/intro-to-linux/2018/4/how-compile-linux-kernel-0
+
+
+tutorials for fedora -->https://www.howopensource.com/2011/08/how-to-install-compile-linux-kernel-3-0-in-fedora-15-and-14/
+
+uname -r -->command to check which current kernel version you have.
+
+why kernel compilation needed-->
+You simply want to know how it’s done.
+You need to enable or disable specific options into a kernel that simply aren’t available via the standard options.
+You want to enable hardware support that might not be found in the standard kernel.
+You’re using a distribution that requires you compile the kernel.
+You’re a student and this is an assignment.
+

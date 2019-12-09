@@ -1,0 +1,22 @@
+sudo apt install bzr
+sudo apt install qbzr
+
+
+before it install python 
+
+************* Theory **************
+version control system is software helps software development teams to manage changes to source code over time.
+
+it keeps track of every modification to source code in special kind of database. 
+
+types-->
+1. central--> ek central repository aste..tithun developer source code ghetat and then commit back to central.
+2. distributed--> every user la local repository aste...jith te modify karu shaktat and later they push it to central.
+
+why we need?
+rollback
+backup
+bug tracking
+collaboration
+limited undo ations..to platforms like neatbeans ecllipse
+

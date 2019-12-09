@@ -1,0 +1,6 @@
+Create Dockerfile
+Use default openjdk image
+WORKDIR is used to set the working directory of image. below that all commands that are executing will run in that folder
+
+docker build -t myjava .
+docker run --name myjavaconatiner -it myjava

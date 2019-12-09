@@ -1,0 +1,4 @@
+it@it-OptiPlex-3020:~/Desktop/oss/flask/composetest$ gedit app.py
+it@it-OptiPlex-3020:~/Desktop/oss/flask/composetest$ gedit Dockerfile
+it@it-OptiPlex-3020:~/Desktop/oss/flask/composetest$ gedit docker-compose.yml
+it@it-OptiPlex-3020:~/Desktop/oss/flask/composetest$ docker-compose up

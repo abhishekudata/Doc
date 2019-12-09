@@ -1,0 +1,5 @@
+tomcat
+
+install nis ftp and nft servers--> 9th assignment on schoology 
+
+install --> sudo apt install tomcat8 (or we have image on bitnami)

@@ -1,0 +1,21 @@
+installing git-
+
+sudo apt-get install git-all
+
+
+
+
+
+
+to create new repository and add to server repository
+
+
+echo "# oss" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/pranavkadam88/oss.git
+git push -u origin master
+
+
+

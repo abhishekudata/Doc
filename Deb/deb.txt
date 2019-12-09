@@ -1,0 +1,86 @@
+ DEB files are installation files for Debian based distributions.
+ RPM files are installation files for Red Hat based distributions.
+ Ubuntu is based on Debian’s package manage based on APT and DPKG.
+ Red Hat, CentOS and Fedora are based on the old Red Hat Linux package management system, RPM.
+
+==
+Ref:      http://linuxconfig.org/easy-way-to-create-a-debian-package-and-local-package-repository
+
+==
+ Step 1: Create binary executable file..
+
+======
+#include <iostream>
+int main() {
+    using namespace std;
+    cout << "Hello DEB\n";
+}
+======
+
+Step 2: 
+To compile the program we need the g++ compiler, 
+which is provided by the build-essential package. We can install it by running:
+
+===
+$ sudo apt-get install build-essential
+===
+
+Step 3 : 
+
+compile and run code
+===
+arcanin3@arcanin3-Inspiron-5558:~/FOSS/DEB$ g++ hello.cpp  -o hello
+arcanin3@arcanin3-Inspiron-5558:~/FOSS/DEB$ ./hello 
+Hello DEB
+===
+
+
+STEP 4 :::  Creating a Debian package
+
+First create a directory called linuxconfig. This directory will hold all necessary package files:
+====
+$ mkdir linuxconfig
+===
+
+Next, create the DEBIAN directory and the control file:
+====
+$ mkdir linuxconfig/DEBIAN
+$ vi linuxconfig/DEBIAN/control
+===
+
+
+####NOTE ::: it is "control"#####
+
+
+Inside the control file, we enter the following information:
+=======
+Package: linuxconfig
+Version: 1.0
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 1024
+Maintainer: abhishekUdata
+Description: Print linuxconfig.org on the screen
+=========
+###########
+NOTE:: Press ESC  then :wq to save and quit from vi
+##########
+
+STEP 5 :
+Create path /usr/bin
+
+arcanin3@arcanin3-Inspiron-5558:~/FOSS/DEB$ mkdir -p linuxConf/usr/bin
+
+
+now copy output file here in /use/bin
+
+
+
+STEP 6 : BUILD DPKG
+
+arcanin3@arcanin3-Inspiron-5558:~/FOSS/DEB$ dpkg-deb --build linuxConf
+
+
+Step 7 :: sudo apt install ./name.deb

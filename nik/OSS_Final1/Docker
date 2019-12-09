@@ -1,0 +1,22 @@
+Docker
+
+to install docker
+
+sudo apt-get update
+sudo apt-get install docker.io
+
+thats it check if it is correctly installed or not--> by-->sudo docker run hello-world
+
+and if it is giving masking error run following three commands
+systemctl unmask docker.service
+systemctl unmask docker.socket
+systemctl start docker.service
+
+and then--> sudo service docker start--> to start and sudo service docker stop-->to stop
+
+difference between virtualization and contentarization-- virtualization madhe every vm la specific minimum resource dyave lagtat..but here flexible
+
+ 
+
+docker resolve issue of application working on one platform and not on other 
+at software development life cycle docker comes at deployment level

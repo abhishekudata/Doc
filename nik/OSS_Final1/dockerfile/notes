@@ -1,0 +1,4 @@
+go to the file location
+
+docker build - < Dockerfile
+docker run -it Dockerfile

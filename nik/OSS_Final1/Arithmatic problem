@@ -1,0 +1,35 @@
+Write a python program to perform arithmetic operations and create Docker image accordingly
+create a new folder
+
+
+1. create Dockerfile
+
+From python:3
+
+ADD arithmatic.py /
+CMD ["python","./arithmatic.py"]
+
+
+
+2. create python file(save file using arithmatic.py name)
+
+a = 21
+b = 10
+c = 0
+
+c = a + b
+print ("Line 1 - Value of c is ", c)
+
+c = a - b
+print ("Line 2 - Value of c is ", c) 
+
+
+
+3. build the img using following command
+
+sudo docker build -t "pgm" .
+
+4. run img on docker
+ 
+sudo docker run pgm
+

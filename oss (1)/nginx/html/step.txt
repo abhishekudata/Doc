@@ -1,0 +1,6 @@
+docker build -t s5 .
+
+
+
+ docker run --name s5 -p 7000:80 s5
+

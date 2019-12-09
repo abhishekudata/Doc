@@ -1,0 +1,71 @@
+sudo su
+
+apt-get install git nano
+
+
+for installing prerequisites for bugzilla
+
+apt-get install apache2 mysql-server libappconfig-perl libdate-calc-perl libtemplate-perl  build-essential libdatetime-timezone-perl libdatetime-perl libemail-sender-perl libemail-mime-perl libemail-mime-modifier-perl libdbi-perl libdbd-mysql-perl libcgi-pm-perl libmath-random-isaac-perl libmath-random-isaac-xs-perl  libapache2-mod-perl2 libapache2-mod-perl2-dev libchart-perl libxml-perl libxml-twig-perl perlmagick libgd-graph-perl libtemplate-plugin-gd-perl libsoap-lite-perl libhtml-scrubber-perl libjson-rpc-perl libdaemon-generic-perl libtheschwartz-perl libtest-taint-perl libauthen-radius-perl libfile-slurp-perl libencode-detect-perl libmodule-build-perl libnet-ldap-perl libauthen-sasl-perl  libfile-mimeinfo-perl libhtml-formattext-withlinks-perl libfile-which-perl libgd-dev libmysqlclient-dev  graphviz python-sphinx rst2pdf
+
+
+cd /var/www/html
+
+git clone https://github.com/bugzilla/bugzilla.git
+
+
+
+nano /etc/mysql/my.cnf
+
+
+mysql -u root -p -e "GRANT ALL PRIVILEGES ON bugs.* TO bugs@localhost IDENTIFIED BY 'pranav'"
+
+service mysql restart
+
+nano /etc/apache2/sites-available/bugzilla.conf
+
+*****file content****
+
+
+ServerName localhost
+
+<Directory /var/www/html/bugzilla>
+  AddHandler cgi-script .cgi
+  Options +ExecCGI
+  DirectoryIndex index.cgi index.html
+  AllowOverride All
+</Directory>
+
+*******************************
+
+a2ensite bugzilla
+a2enmod cgi headers expires
+service apache2 restart
+
+
+
+
+
+cd /var/www/html/bugzilla
+./checksetup.pl
+
+
+nano localconfig
+
+***********
+ set $webservergroup to www-data
+ set $db_pass to the password for the bugs user you created in MySQL a few steps ago
+***********
+
+
+./checksetup.pl
+*************
+It will ask you to give an email address, real name and password for the first Bugzilla account to be created, which will be an administrator. Write down the email address and password you set.
+**********
+
+./testserver.pl http://localhost/bugzilla
+
+lynx http://localhost/bugzilla
+
+
+
+

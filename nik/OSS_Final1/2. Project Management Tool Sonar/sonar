@@ -1,0 +1,28 @@
+sonar-->
+
+simple ek java project kar ecllipse madhe later add it to sonar
+
+suggest possibly optimised codes--> give probable solutions-->to get the better code quality
+
+
+****************************adding java project to sonarcube**********************
+
+1. sonar scanner as google var tak...linux sathi downlaod kar..
+
+2.java project var ja -->right click-->new-->file-->filename="sonar-project.properties"-->tya file madhe--> sonar scanner var ji ji mahiti ti sagli coopy kar file la and fill up kar..
+project key pudh= "projct cha path"
+name =name
+version=1.0
+sonar.sources=src(i.e src madhil fakt programs/files sonarcube scan karel) ani jar sonar.sources=. asel tr all tya projects madhil files analyse karel to
+sonar.java.binaries=/home/vishal/Documents/Ecllipse Projects/DM Laab(which is path to all class files of project)
+
+sonar.sourceEncoding=UTF-8
+sonar.langauge=java
+
+3. now--> project sathi ji sonar-project.properties files keli hoti tithe ja...open terminal...
+very imp(copy the path where you saved downloaded unzipped sonar.scanner tyat bin folder madhe jo sonar-scanner ahe tyacha path copy kar)
+and execute here--> means sonar.project.properties chya folder chya madhe open kelela terminal var.../bin madhil sonar-scanner file execute kar.
+
+4. execute hoil--> tith ji link generate hoil ti copy kar...browser var open kar.
+
+

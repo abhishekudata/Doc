@@ -1,0 +1,32 @@
+1. create one folder on destop called test--> create one text file called test2.txt in it with some lines of data...(hello)
+2. open termial throug test folder..
+
+bzr help--> command to help all related commands
+
+add your name and email--> bzr whoami "John Doe <john.doe@gmail.com>"
+
+
+
+so now terminal var "bzr"--> output must be like  similar to javac... output
+
+bzr init --> to start bazaar (so it will create .bzr  hidden folder in test folder)
+bzr status--> to check status
+bzr add --> will add all the files present in direcotry so test2.txt added to bzr.
+bzr commit -m 'first commit' --> commit will be peroformed with first commit message.
+
+now change content in test2.txt and run bzr status in terminal--> so it will show modified.
+  bzr diff --> it will show which of lines are changed 
+
+bzr qdiff-->now khup sare changes astil tar ek navin textfile open karen ani tyat new and changed lines show karel
+(tya file madhe--> red lines highlights ahet tya means deleted...blue line modified..green addition)
+ 
+now test2.txt modify kelte so..commit with message like 'commit second time'
+
+bzr log--> gives all previous logs for that documentory.
+
+bzr qlog--> give logs in graphical format.
+
+bzr revert --> je kai changes kele hote te sarv jatil i.e previous ji last modified file hoti ti restore hoil.
+bzr revert also restore deleted files 
+
+
