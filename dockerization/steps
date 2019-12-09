@@ -1,0 +1,4 @@
+docker login
+docker images
+docker tag 21edfsf32r username/imgname:01
+docker push username/imgname:01
