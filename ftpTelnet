@@ -1,0 +1,21 @@
+sudo apt-get install vsftpd
+
+sudo gedit /etc/vsftpd.conf
+
+
+anony= YES
+local = YES
+Write =YES
+
+
+
+sudo service vsftpd restart
+ftp 10.10.13.32
+
+Telnet
+
+sudo apt-get install telnetd -y
+sudo systemctl status inetd
+
+client 
+telnet 10.10.13.31
