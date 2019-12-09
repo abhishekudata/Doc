@@ -1,0 +1,142 @@
+LINUX MUST BE 64-bit
+Kernel version above 3.0   check via ==> uname -r
+
+1. Update ==> sudo apt-get update
+ 
+2. Remove Old version of Docker ==> sudo apt-get remove docker docker-engine docker.io
+
+3. Install docker ==> sudo apt install docker.io
+
+4. check docker installed or not ==> docker
+        docker --version
+        docker info
+        
+        
+5. start the docker==> sudo service docker start
+
+6. we get some info after starting ==> docker info
+
+7. if you dont want to use sudo infront of every docker command (relogin after using this command)==> sudo usermod -a -G ArCanIn3-user
+
+8. list out all docker images ==> docker images
+
+9. list out "running" containers in background ==> docker ps
+
+10. a)list out all containers we used before(docker containers which were killed but used before)==> docker ps -a
+
+	b)container that was used last time ==> docker ps -l  
+
+	c)shows with ONLY ContainerID==> docker ps -aq
+			-a means all of therm
+	d)SHOW only last container i ran=>
+		 	docker ps -l     
+			docker ps -ql
+
+	e)remove the docker container==> docker rm  ##id##
+
+	f)FOR IMAGE LIST ==>docker images
+	g) only Image ID ==> docker images -q
+	h)to remove the image -==> docker rmi -f **imageID***			====>-f to force remove
+	^^^^^ check other command by just saying $docker ^^^^
+	^^^^^ we can also use $docker rmi --help  ^^^^^
+11. to run a contianer (if container not present then it loads i.e. pull the container from docker-hub i.e. library and runs it ) ==> docker run hello-world
+
+
+12.to stop the docker ==> sudo service docker stop
+
+13. uninstall docker ==> sudo remove docker
+
+14. sudo service docker restart
+
+REFERENCE : 
+            https://get.docker.com/
+
+
+========######1#####=============
+Docker image is like a "Class"
+Docker container is like a "Imstance of that class"
+There are two ways to run Docker 
+1. Interactively	-> 
+2. Automatically	-> Better and faster
+
+		--//ITERATIVE//--
+$docker run -it  ubuntu bash
+	wget		(if not there then update and install)
+		apt-get update
+		apt-get install wget
+	curl		(it is a tool)
+		apt-get install curl
+	exit
+(====CHECK BY=====)
+docker ps -like
+(copy container id)
+docker diff ***  	[where *** are first three char of container ID]
+(docker image is read only when we make changes i.e. in container then docker shows difference bettwen base image and our )
+to commit those changes then use ==> docker commit ***
+it returns ID of new Image i.e. new***
+
+docker run -it new***
+
+docker run -it new*** bash
+	wget
+	curl
+	(these two already exist===> CHECK DONE)
+
+(====CHECK DONE=====)
+
+=====#####2#####=====
+run docker container by its name rather than docker Container ID
+docker run it ubuntu bash
+	wget
+		apt-get update
+		apt-install wget
+	exit
+
+docker ps -l
+(copy the ID ###)
+docker commit ###
+(returns new image id #$#)
+
+GIVE IMAGE A NAME DURING COMMIT ONLY
+$ docker commit #$# myOwnNamedDockerImage
+
+OR AFER COMMIT ALSO WE CAN ADD IMAGE A NAME BY
+$ docker tag ### myOldDockerImage
+
+CHECK IT BY 
+$ docker images
+
+WE CAN NOW RUN BY 
+$docker run -it myOldDockerImage bash
+
+=========####-3-#####========
+
+sudo service docker restart
+docker ps
+
+
+======####-4-#####======
+
+mkdir myimage
+cd myimage
+touch Dockerfile		(capital D)
+gedit Dockerfile		
+/* write series of instruction telling docker how image is constructed */
+#### copy this in docker file###
+
+FROM ubuntu
+RUN apt-get update
+Run apt-get install -y wget  				
+#### END ###
+"-y" means "yes"
+###Save and go to terminal###
+
+$ docker build -t myubuntuimage .				( "."" is used to tell that docker file is present in current directory)
+$ docker images
+
+now we can see NEW IMAGE NAMED myubuntuimage :) 
+
+
+
+
+NOTE : Dockerfile "D" capital and this file must be present in seperate directory (which is close to image name)
