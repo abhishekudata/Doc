@@ -1,0 +1,20 @@
+version: '2'
+services:
+  wordpress:
+    image: wordpress
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: wp_db
+      WORDPRESS_DB_USER: my-user
+      WORDPRESS_DB_PASSWORD: my-password
+      WORDPRESS_DB_NAME: my-db
+    ports:
+      - "8007:80"
+  wp_db:
+    image: mysql:5.5
+    environment:
+      MYSQL_ROOT_PASSWORD: some-secure-pw
+      MYSQL_USER: my-user
+      MYSQL_PASSWORD: my-password
+      MYSQL_DATABASE: my-db
